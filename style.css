@@ -1,0 +1,22 @@
+.lanc{
+    /* animation-name: login; */
+    /* color: white; */
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    /* animation-timing-function: linear; */
+    /* word-spacing: 20px; */
+
+}
+
+
+
+
+@keyframes login {
+    0%{
+        transform: translate(0, 0)
+    }
+    100%{
+        transform: translate(0, -50%);
+    }
+}

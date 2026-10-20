@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome</title>
+    <link rel="icon" href="images/logo.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
-<body class="bg-[url(images/bg.png)]">
+<body class="bg-[url(images/bg.png)] grid-cols-2 place-content-center flex justify-center content-center h-screen">
     
-    <header></header>
+    <!-- <header></header>
     <main></main>
-    <footer></footer>
+    <footer></footer> -->
+
+    <button id="lanc" class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 animate-pulse w-200">
+        <img src="images/logo.png" alt="Mythoria logo">
+    </button>
 </body>
+    <script>
+         let btn = document.getElementById('lanc')
+        btn.addEventListener("click", (e)=>{
+            btn.style.animationName = "login"
+            setTimeout(()=>{
+                window.location.href = "home.html";
+            }, 1800)
+        })
+    </script>
+
 </html>
