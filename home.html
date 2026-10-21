@@ -7,104 +7,161 @@
     <title>Hum</title>
     <link rel="icon" href="images/logo.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
-    <header class="">
-        <nav class="flex justify-center">
-            <a class="my-auto" href="boutique.html">
-                Decouvrir les boosters
-            </a>
+<body class="">
+    <div class="bg-[url(images/bg.png)] ">
 
-            <a class="" href="home.html">
-                <img class="w-100 " src="images/logo.png" alt="Mythoria logo">
-            </a>
+        <header class="backdrop-blur-lg  rounded-3xl border border-white/20 shadow-2xl shadow-black/10">
+            <nav
+                class="flex justify-center manufacturing-consent-regular bg-[url(images/header_transparent.png)] bg-no-repeat bg-size-[93%] bg-center">
+                <a class="my-auto text-yellow-100" href="boutique.html">
+                    Decouvrir les boosters
+                </a>
 
-            <a class="my-auto" href="collection.html">
-                Ouvrir mon grimoire
-            </a>
-        </nav>
-    </header>
-    <main>
-        <!-- Une présentation des quatre catégories de cartes. -->
-        <section class="flex justify-around ">
-            <div class="flex w-3/7 flex-wrap">
-                <div id="cat1" class="w-full flex flex-wrap ">
-                    <h1 class="w-full text-center">Héros</h1>
-                    <img src="images/910f1e0d9615761e8a89099b729a19f8.jpg" class="w-1/2" alt="">
-                    <div class="w-1/2">
-                        <h2>Squirtle</h2>
+                <a class="" href="home.html">
+                    <img class="w-100 " src="images/logo.png" alt="Mythoria logo">
+                </a>
+
+                <a class="my-auto text-yellow-400" href="collection.html">
+                    Ouvrir mon grimoire
+                </a>
+            </nav>
+        </header>
+        <main class="">
+            <!-- Une présentation des quatre catégories de cartes. -->
+            <section class="flex justify-around bg-[url(images/scroll_wide.png)] bg-cover bg-size-[120%] bg-center p-6">
+                <div class="flex w-3/7 flex-wrap">
+                    <div id="cat1" class="w-full flex flex-wrap ">
+                        <h1 class="w-full text-center text-yellow-500 font-black">Héros</h1>
+                        <img src="images/tst.png" class="w-1/2 h-auto" alt="">
+                        <div class="w-1/2 p-3">
+                            <h2 class="">Squirtle</h2>
+                            <p class="">
+                                Pokémon Tortaruguina.
+                                Nº 0007. Altura: 0,5 m. Peso: 9,0 kg.
+                                Quando este Pokémon sente-se ameaçado,
+                                esconde-se dentro do seu casco e lança água pela boca.
+                            </p>
+                            <h3>attaques</h3>
+                            <!-- <ul>
+                                <li>
+                                    <h4>Retirada</h4>
+                                    <p>cout: watter</p>
+                                    <p>dagats: 0</p>
+                                </li>
+                                <li>
+                                    <h4>Quebra-crânio</h4>
+                                    <p>cout: watter</p>
+                                    <p>dagats: 20</p>
+                                </li>
+                            </ul> -->
+                        </div>
+                    </div>
+
+                    <div id="cat13" class="w-1/2">
+                        <h1 class="text-center">Serviteurs</h1>
+                        <img src="images/tst.png" class="w-1/2" alt="">
+
+                    </div>
+
+                    <div id="cat14" class="w-1/2">
+                        <h1 class="text-center">Sorts</h1>
+                        <img src="images/tst.png" class="w-1/2" alt="">
+
+                    </div>
+                </div>
+
+
+                <div class="flex w-3/7 flex-wrap">
+                    <div id="cat2" class="w-full w-full flex flex-wrap">
+                        <h1 class="w-full text-center">Monstres</h1>
+                        <img src="images/tst.png" class="w-1/2" alt="">
+                        <div class="w-1/2">
+                            ifos
+                        </div>
+                    </div>
+
+                    <div id="cat23" class="w-1/2">
+                        <h1 class="text-center">Serviteurs</h1>
+                        <img src="images/tst.png" class="w-1/2" alt="">
+
+                    </div>
+
+                    <div id="cat24" class="w-1/2">
+                        <h1 class="text-center">Sorts</h1>
+                        <img src="images/tst.png" class="w-1/2" alt="">
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Une section présentant les boosters disponibles. -->
+            <section id="boosters"
+                class="backdrop-blur-lg h-screen rounded-3xl border border-white/20 shadow-2xl shadow-black/10 ">
+                <h1 class="text-red-500">Boosters</h1>
+                <div class="flex w-full justify-around">
+                    <div id="BeginnerPack" class="w-1/5 text-red-200">
+                        <h2 class="bg-[url(images/frame_wide.png)] bg-cover bg-center text-center ">Beginner Pack</h2>
+                        <img src="images/tst.png" alt="">
                         <p>
-                            Pokémon Tortaruguina.
-                            Nº 0007. Altura: 0,5 m. Peso: 9,0 kg.
-                            Quando este Pokémon sente-se ameaçado,
-                            esconde-se dentro do seu casco e lança água pela boca.
+                            Un pack conçu pour les nouveaux joueurs,
+                            contenant un assortiment de cartes communes
+                            et quelques cartes de rareté supérieure.
                         </p>
-                        <h3>attaques</h3>
-                        <ul>
-                            <li>
-                                <h4>Retirada</h4>
-                                <p>cout: watter</p>
-                                <p>dagats: 0</p>
-                            </li>
-                            <li>
-                                <h4>Quebra-crânio</h4>
-                                <p>cout: watter</p>
-                                <p>dagats: 20</p>
-                            </li>
-                        </ul>
+                    </div>
+
+                    <div id="SummoningoftheLegends" class="w-1/5 text-red-200">
+                        <h2 class="bg-[url(images/frame_wide.png)] bg-cover bg-center text-center ">Summoning of the
+                            Legends</h2>
+                        <img src="images/tst.png" alt="">
+                        <p>
+                            Un pack premium proposant une meilleure probabilité
+                            d'obtenir des cartes rares, épiques ou légendaires.
+                        </p>
+                    </div>
+
+                    <div id="DarkSummoning" class="w-1/5 text-red-200">
+                        <h2 class="bg-[url(images/frame_wide.png)] bg-cover bg-center text-center ">Dark Summoning</h2>
+                        <img src="images/tst.png" alt="">
+                        <p>
+                            Un booster thématique consacré aux monstres, aux
+                            serviteurs des Ténèbres et aux sorts interdits.
+                        </p>
+                    </div>
+
+                    <div id="LuckyPack" class="w-1/5 text-red-200">
+                        <h2 class="bg-[url(images/frame_wide.png)] bg-cover bg-center text-center ">Lucky Pack</h2>
+                        <img src="images/tst.png" alt="">
+                        <p>
+                            Un pack mystère avec une composition aléatoire
+                            et une chance de découvrir une carte exceptionnelle.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Une section mettant en avant quelques cartes legendaires -->
+            <section>
+                <h1>Legendary</h1>
+                <div id="gal" class=" ">
+                    <div id="cal">
+                        <img src="images/tst.png" alt="">
+                        <img src="images/tst.png" alt="">
+                        <img src="images/tst.png" alt="">
+                        <img src="images/tst.png" alt="">
+                        <img src="images/tst.png" alt="">
+                        <img src="images/tst.png" alt="">
+                        <img src="images/tst.png" alt="">
                     </div>
                 </div>
+            </section>
 
-                <div id="cat13" class="w-1/2">
-                    <h1 class="text-center">Serviteurs</h1>
-                    <img src="images/910f1e0d9615761e8a89099b729a19f8.jpg" class="w-1/2" alt="">
-
-                </div>
-
-                <div id="cat14" class="w-1/2">
-                    <h1 class="text-center">Sorts</h1>
-                    <img src="images/910f1e0d9615761e8a89099b729a19f8.jpg" class="w-1/2" alt="">
-
-                </div>
-            </div>
-
-
-            <div class="flex w-3/7 flex-wrap">
-                <div id="cat2" class="w-full w-full flex flex-wrap">
-                    <h1 class="w-full text-center">Monstres</h1>
-                    <img src="images/910f1e0d9615761e8a89099b729a19f8.jpg" class="w-1/2" alt="">
-                    <div class="w-1/2">
-                        ifos
-                    </div>
-                </div>
-
-                <div id="cat23" class="w-1/2">
-                    <h1 class="text-center">Serviteurs</h1>
-                    <img src="images/910f1e0d9615761e8a89099b729a19f8.jpg" class="w-1/2" alt="">
-
-                </div>
-
-                <div id="cat24" class="w-1/2">
-                    <h1 class="text-center">Sorts</h1>
-                    <img src="images/910f1e0d9615761e8a89099b729a19f8.jpg" class="w-1/2" alt="">
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Une section présentant les boosters disponibles. -->
-        <section>
-
-        </section>
-
-        <!-- Une section mettant en avant quelques cartes légendaires -->
-        <section>
-
-        </section>
-
-    </main>
+        </main>
+    </div>
     <footer>
 
     </footer>
