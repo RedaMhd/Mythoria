@@ -53,7 +53,7 @@
     display: flex;
     gap: 20px;
     width: max-content;
-    /* animation: spin 39s infinite linear; */
+    animation: spin 39s infinite linear;
 }
 #cal > div{
     display: flex;
@@ -102,3 +102,6 @@ section{
     width: 350px;
 }
 
+.panier{
+    display: none;
+}
