@@ -35,7 +35,7 @@
     }
 }
 
-#boosters> h1{
+#boosters> h1, #Legendary{
     font-weight: 600;
     font-size: 50px;
     text-align: center;
@@ -49,44 +49,38 @@
     color: rgb(255, 255, 255);
 }
 
-#gal{
+#cal{
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    width: max-content;
+    animation: spin 39s infinite linear;
+}
+#cal > div{
+    display: flex;
+    gap: 20px;
     height: 450px;
-    /* animation: spin 30s infinite linear; */
 }
-#cal {
-    display: flex;
+
+#gal{
     overflow-x: scroll;
-    gap: 10px;
-
+    scrollbar-width: none;
 }
-
-#cal::-webkit-scrollbar {
-    display: none;
-}
-
-#gal img {
-    height: 430px;
-    width: 300px;
-    transition: 0.3s;
-
-}
-#gal img:hover {
-    transform: scale(1.05);
-
-}
-
-#cal:hover #gal {
+#cal:hover{
     animation-play-state: paused;
-
 }
-@keyframes spin {
-    from {
-        translate: 0;
-    }
+#cal img:hover{
+    transform: scale(1.03);
+}
 
-    to {
-        translate: -100%;
+@keyframes spin {
+    0%{
+        transform: translateX(0%);
     }
+    100%{
+        transform: translate(-50%);
+    }
+}
+
+section{
+    margin-top: 10px;
 }
