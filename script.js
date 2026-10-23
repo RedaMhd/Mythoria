@@ -2,97 +2,40 @@
 // Afficher le nombre et les catégories de cartes qu'il peut contenir.
 
 let boosters = [
-    {
-        id: 1,
-        name: "nameA",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 2],
-        pathImg: "images/pack/a.png"
-    },
-    {
-        id: 2,
-        name: "nameB",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 3],
-        pathImg: "images/pack/b.png"
-    },
-    {
-        id: 3,
-        name: "nameC",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 2],
-        pathImg: "images/pack/c.png"
-    },
-    {
-        id: 4,
-        name: "nameD",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 4],
-        pathImg: "images/pack/d.png"
-    },
-    {
-        id: 5,
-        name: "nameE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 3],
-        pathImg: "images/pack/z.png"
-    },
-    {
-        id: 11,
-        name: "nameA",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 2],
-        pathImg: "images/pack/a.png"
-    },
-    {
-        id: 12,
-        name: "nameB",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 3],
-        pathImg: "images/pack/b.png"
-    },
-    {
-        id: 13,
-        name: "nameC",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 2],
-        pathImg: "images/pack/c.png"
-    },
-    {
-        id: 14,
-        name: "nameD",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 4],
-        pathImg: "images/pack/d.png"
-    },
-    {
-        id: 15,
-        name: "nameE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi",
-        prix: "15",
-        typeId: "1",
-        categorieId: [1, 3],
-        pathImg: "images/pack/z.png"
-    }
-]
+    { id: 1, name: "name1", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "15", typeId: "1", categorieId: [1, 2], pathImg: "images/pack/a.png" },
+    { id: 2, name: "name2", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "20", typeId: "1", categorieId: [1, 3], pathImg: "images/pack/b.png" },
+    { id: 3, name: "name3", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "25", typeId: "1", categorieId: [1, 2], pathImg: "images/pack/c.png" },
+    { id: 4, name: "name4", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "30", typeId: "1", categorieId: [1, 4], pathImg: "images/pack/d.png" },
+    { id: 5, name: "name5", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "35", typeId: "1", categorieId: [1, 3], pathImg: "images/pack/z.png" },
+    { id: 6, name: "name6", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "40", typeId: "1", categorieId: [1, 2], pathImg: "images/pack/a.png" },
+    { id: 7, name: "name7", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "15", typeId: "1", categorieId: [1, 3], pathImg: "images/pack/b.png" },
+    { id: 8, name: "name8", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "20", typeId: "1", categorieId: [1, 2], pathImg: "images/pack/c.png" },
+    { id: 9, name: "name9", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "25", typeId: "2", categorieId: [1, 4], pathImg: "images/pack/d.png" },
+    { id: 10, name: "name10", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "30", typeId: "2", categorieId: [1, 3], pathImg: "images/pack/z.png" },
+    { id: 11, name: "name11", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "35", typeId: "2", categorieId: [1, 2], pathImg: "images/pack/a.png" },
+    { id: 12, name: "name12", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "40", typeId: "2", categorieId: [1, 3], pathImg: "images/pack/b.png" },
+    { id: 13, name: "name13", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "15", typeId: "2", categorieId: [1, 2], pathImg: "images/pack/c.png" },
+    { id: 14, name: "name14", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "20", typeId: "2", categorieId: [1, 4], pathImg: "images/pack/d.png" },
+    { id: 15, name: "name15", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "25", typeId: "2", categorieId: [1, 3], pathImg: "images/pack/z.png" },
+    { id: 16, name: "name16", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "30", typeId: "2", categorieId: [1, 2], pathImg: "images/pack/a.png" },
+    { id: 17, name: "name17", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "35", typeId: "3", categorieId: [1, 3], pathImg: "images/pack/b.png" },
+    { id: 18, name: "name18", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "40", typeId: "3", categorieId: [1, 2], pathImg: "images/pack/c.png" },
+    { id: 19, name: "name19", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "15", typeId: "3", categorieId: [1, 4], pathImg: "images/pack/d.png" },
+    { id: 20, name: "name20", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "20", typeId: "3", categorieId: [1, 3], pathImg: "images/pack/z.png" },
+    { id: 21, name: "name21", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "25", typeId: "3", categorieId: [1, 2], pathImg: "images/pack/a.png" },
+    { id: 22, name: "name22", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "30", typeId: "3", categorieId: [1, 3], pathImg: "images/pack/b.png" },
+    { id: 23, name: "name23", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "35", typeId: "3", categorieId: [1, 2], pathImg: "images/pack/c.png" },
+    { id: 24, name: "name24", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "40", typeId: "3", categorieId: [1, 4], pathImg: "images/pack/d.png" },
+    { id: 25, name: "name25", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "15", typeId: "4", categorieId: [1, 3], pathImg: "images/pack/z.png" },
+    { id: 26, name: "name26", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "20", typeId: "4", categorieId: [1, 2], pathImg: "images/pack/a.png" },
+    { id: 27, name: "name27", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "25", typeId: "4", categorieId: [1, 3], pathImg: "images/pack/b.png" },
+    { id: 28, name: "name28", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "30", typeId: "4", categorieId: [1, 2], pathImg: "images/pack/c.png" },
+    { id: 29, name: "name29", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "35", typeId: "4", categorieId: [1, 4], pathImg: "images/pack/d.png" },
+    { id: 30, name: "name30", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "40", typeId: "4", categorieId: [1, 3], pathImg: "images/pack/z.png" },
+    { id: 31, name: "name31", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "15", typeId: "4", categorieId: [1, 2], pathImg: "images/pack/a.png" },
+    { id: 32, name: "name32", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "20", typeId: "4", categorieId: [1, 3], pathImg: "images/pack/b.png" }
+];
+
 
 let types = [
     {
@@ -172,12 +115,12 @@ function afficherBosters() {
     });
 }
 
-// if(localStorage.getItem('painer') === null){
+// if(localStorage.getItem('panier') === null){
 //     localStorage.setItem('panier', 'frrrr');
 //     console.log('panier not found and, create it');
 // }else{
 //     console.log('creat function skiped, maybe it there! !');
-//     let p = localStorage.getItem('painer');
+//     let p = localStorage.getItem('panier');
 //     console.log(`${p} <= do you ?`)
 // }
 
@@ -191,7 +134,7 @@ if (localStorage.getItem('panier') === null) {
     console.log(`${p} <= do you ?`)
 }
 
-let painer = JSON.parse(localStorage.getItem("panier"));
+let panier = JSON.parse(localStorage.getItem("panier"));
 let ulPanier = document.querySelector(".listPanier");
 
 let boostersAll = document.querySelector('.bstr');
@@ -207,21 +150,25 @@ actualisTotal();
 boostersAll.addEventListener('click', (ev) => {
     if (ev.target.tagName === "BUTTON") {
         let ajoutBtn = ev.target;
-        let id = boosters.findIndex(b => b.id === parseInt(ajoutBtn.name));
+        let ind = boosters.findIndex(b => b.id === parseInt(ajoutBtn.name));
         // console.log(`ID = ${id}, tergettxt :${ev.target.textContent}, ajoutBtn.name = ${ajoutBtn.name}, bstr.id = ${boosters[3].id} `)
-        painer.push(id);
-        console.log(painer)
-        localStorage.setItem("panier", JSON.stringify(painer));
+        panier.push(ind);
+        console.log(panier)
+        localStorage.setItem("panier", JSON.stringify(panier));
         actualisTotal();
     }
 })
 
 function actualisTotal() {
     let tot = 0;
-    painer = JSON.parse(localStorage.getItem("panier"));
+    panier = JSON.parse(localStorage.getItem("panier"));
 
-    painer.forEach(id => {
+    ulPanier.textContent = '';
+
+    panier.forEach(id => {
         tot += parseInt(boosters[id].prix);
+        console.log(id)
+        console.log("===============")
         creatLiItem(id);
     });
     totalSpan.textContent = `${tot} DH`;
@@ -236,10 +183,10 @@ btnAffichPanier.addEventListener("click", e => {
 })
 
 
-function creatLiItem(id){
+function creatLiItem(ind){
     let li = document.createElement("li");
-    li.textContent = `${boosters[id].name}  : ${boosters[id].prix} DH `;
-    li.name = `${id}`;
+    li.textContent = `${boosters[ind].name}  : ${boosters[ind].prix} DH `;
+    li.id = `${ind}`;
     // console.log(ulPanier);
     ulPanier.append(li);
 }
@@ -247,11 +194,12 @@ function creatLiItem(id){
 ulPanier.addEventListener("click", e =>{
     if(e.target.tagName === 'LI')
     {
-        let indec = parseInt(e.target.name);
+        let indec = parseInt(e.target.id);
+        // console.log(e.target)
         console.log(`${indec}`)
-        
-        painer.splice(boosters[indec].id, 1);
-        localStorage.setItem("panier", JSON.stringify(painer));
+        let indOfIndex= panier.indexOf(item => item === indec);
+        panier.splice(indOfIndex , 1);
+        localStorage.setItem("panier", JSON.stringify(panier));
         // actualisTotal();
     }
 })
