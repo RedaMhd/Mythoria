@@ -101,6 +101,7 @@ function afficherBosters() {
 
         btn.textContent = `${item.prix} DH`;
         h1.textContent = item.name;
+        cart.className += 'bg-[url(images/g.png)] bg-cover bg-size-[110%] bg-center ';
         img.src = item.pathImg;
         p.textContent = item.description;
         btn.name = `${item.id}`;
@@ -117,21 +118,21 @@ function afficherBosters() {
 
 // if(localStorage.getItem('panier') === null){
 //     localStorage.setItem('panier', 'frrrr');
-//     console.log('panier not found and, create it');
+    // console.log('panier not found and, create it');
 // }else{
-//     console.log('creat function skiped, maybe it there! !');
+    // console.log('creat function skiped, maybe it there! !');
 //     let p = localStorage.getItem('panier');
-//     console.log(`${p} <= do you ?`)
+    // console.log(`${p} <= do you ?`)
 // }
 
 
 if (localStorage.getItem('panier') === null) {
     localStorage.setItem('panier', JSON.stringify([]));
-    console.log('panier not found and, create it');
+    // console.log('panier not found and, create it');
 } else {
-    console.log('creat function skiped, maybe it there! !');
+    // console.log('creat function skiped, maybe it there! !');
     let p = localStorage.getItem('panier');
-    console.log(`${p} <= do you ?`)
+    // console.log(`${p} <= do you ?`)
 }
 
 let panier = JSON.parse(localStorage.getItem("panier"));
@@ -141,6 +142,7 @@ let boostersAll = document.querySelector('.bstr');
 const totalSpan = document.querySelector("#total");
 
 const btnAffichPanier = document.querySelector(".affichPanier");
+const closePanier = document.querySelector(".x");
 const panierSection = document.querySelector(".panier");
 
 const totalP = document.querySelector(".pTotal");
@@ -153,7 +155,7 @@ boostersAll.addEventListener('click', (ev) => {
         let ind = boosters.findIndex(b => b.id === parseInt(ajoutBtn.name));
         // console.log(`ID = ${id}, tergettxt :${ev.target.textContent}, ajoutBtn.name = ${ajoutBtn.name}, bstr.id = ${boosters[3].id} `)
         panier.push(ind);
-        console.log(panier)
+        // console.log(panier)
         localStorage.setItem("panier", JSON.stringify(panier));
         actualisTotal();
     }
@@ -167,19 +169,20 @@ function actualisTotal() {
 
     panier.forEach(id => {
         tot += parseInt(boosters[id].prix);
-        console.log(id)
-        console.log("===============")
+        // console.log(id)
+        // console.log("===============")
         creatLiItem(id);
     });
     totalSpan.textContent = `${tot} DH`;
+    totalP.textContent = `${totalSpan.textContent}`;
 }
 
 
 btnAffichPanier.addEventListener("click", e => {
     btnAffichPanier.style.display = "none";
     panierSection.style.display = "block";
-    console.log(totalP);
-    totalP.textContent = `${totalSpan.textContent} DH`;
+    // console.log(totalP);
+    totalP.textContent = `${totalSpan.textContent}`;
 })
 
 
@@ -195,13 +198,24 @@ ulPanier.addEventListener("click", e =>{
     if(e.target.tagName === 'LI')
     {
         let indec = parseInt(e.target.id);
-        // console.log(e.target)
-        console.log(`${indec}`)
-        let indOfIndex= panier.indexOf(item => item === indec);
+
+        let indOfIndex= panier.indexOf(indec);
+
+        console.log(`id of li => ${indec}`)
+        console.log(`indOfIndex => ${indOfIndex}`)
+        console.log(`panierb befor Dl => ${panier}`)
+        
         panier.splice(indOfIndex , 1);
+        console.log(`panierb After Dl => ${panier}`)
+
         localStorage.setItem("panier", JSON.stringify(panier));
-        // actualisTotal();
+        actualisTotal();
     }
+})
+
+closePanier.addEventListener("click", ()=>{
+    btnAffichPanier.style.display = "block";
+    panierSection.style.display = "none";
 })
 
 afficherBosters();
