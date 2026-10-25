@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header class="backdrop-blur-lg bg-sky-900  rounded-3xl border border-white/20 shadow-2xl shadow-black/10">
+<body class="">
+    <header class=" bg-[url(images/testHeader.png)] ">
         <nav
-            class="flex justify-center manufacturing-consent-regular bg-[url(images/header_transparent.png)] bg-no-repeat bg-size-[93%] bg-center">
+            class="flex justify-center manufacturing-consent-regular bg-[url(images/header_transparent.png)] bg-no-repeat bg-size-[93%] bg-center backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl shadow-black/10">
             <a class="my-auto text-yellow-100" href="boutique.html">
                 Decouvrir les boosters
             </a>
@@ -28,21 +28,27 @@
         </nav>
     </header>
 
-    <main class="flex bg-orange-100 flex-col justify-between">
-        <div class="bg-orange-500 w-[25vh] flex justify-center m-auto">
-            <div class="panier bg-orange-200">
-                <button class="x ml-[21vh] w-[25px] h-[25px] bg-red-500 rounded-[50%]"> X</button>
-                <ul class="listPanier">
+    <main class="flex bg-orange-100 flex-col justify-between bg-[url(images/storBg.jpg)] bg-cover bg-size-[105%] bg-center">
+        <div class="w-[50%] flex justify-center m-auto p-0  ">
+            <div class="px-[20%] pt-[10%] panier bg-[url(images/flag.png)] bg-cover bg-size-[100%] w-full bg-center bg-no-repeat bg-top-left">
+                <button class="x ml-[85%] w-[25px] h-[35px] bg-black text-red-500 rounded-[50%]">X</button>
+                <ul class="listPanier flex flex-col gap-[30px]">
                     
                 </ul>
                 <p class="pTotal"></p>
-                <button class="valider">Acheter</button>
+                <button class="valider text-green-400">Acheter</button>
             </div>
-            <button class="affichPanier">panier : <samp id="total"></samp></button>
+            <button 
+            class="text-[40px] affichPanier px-[20%] pt-[6%] bg-[url(images/flag.png)] bg-cover bg-size-[100%] w-full bg-center bg-no-repeat bg-top-left">
+                panier : <samp id="total"></samp>
+            </button>
         </div>
 
         <section class="h-1/4 flex flex-col">
-            <h1 class="bg-[url(images/frame_transparent.png)] bg-cover bg-size-[110%] bg-center">Beginner Pack :</h1>
+            <h1 
+        class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Beginner Pack :
+            </h1>
             <div class="containerBstr">
                 <div class="bstr bstr1 flex gap-[15px]">
 
@@ -51,7 +57,10 @@
         </section>
 
         <section class="h-1/4 flex flex-col ">
-            <h1 class="bg-[url(images/frame_transparent.png)] bg-cover bg-size-[110%] bg-center">Summoning of the Legends :</h1>
+            <h1 
+        class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Summoning of the Legends :
+            </h1>
             <div class="containerBstr">
                 <div class="bstr bstr2 flex gap-[15px]">
 
@@ -60,7 +69,10 @@
         </section>
 
         <section class="h-1/4 flex flex-col">
-            <h1 class="bg-[url(images/frame_transparent.png)] bg-cover bg-size-[110%] bg-center">Dark Summoning :</h1>
+            <h1 
+        class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Dark Summoning :
+            </h1>
             <div class="containerBstr">
                 <div class="bstr bstr3 flex gap-[15px]">
 
@@ -69,7 +81,10 @@
         </section>
 
         <section class="h-1/4 flex flex-col">
-            <h1 class="bg-[url(images/frame_transparent.png)] bg-cover bg-size-[110%] bg-center">Lucky Pack :</h1>
+            <h1 
+        class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Lucky Pack :
+            </h1>
             <div class="containerBstr">
                 <div class="bstr bstr4 flex gap-[15px]">
 
