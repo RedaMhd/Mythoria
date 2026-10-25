@@ -91,7 +91,7 @@ let categori = [
 function afficherBosters() {
     boosters.forEach((item) => {
         let sectionConten = document.querySelector(`.bstr${item.typeId}`);
-        // console.log(`${item.categorieId[1]}`);
+        // // console.log(`${item.categorieId[1]}`);
 
         let cart = document.createElement("div");
         let h1 = document.createElement("h1");
@@ -107,7 +107,7 @@ function afficherBosters() {
 
         h4Cat.textContent = "Categories :";
         h4Cat.className = "text-sky-600 w-[100%]";
-        console.log(types.findIndex(e=> e.id === item.typeId))
+        // console.log(types.findIndex(e => e.id === item.typeId))
         // h4Typ.textContent = `Type : ${types[types.findIndex(e=> parseInt(e.id) === parseInt(item.typeId))].name}`;
         // h4Typ.className = "text-sky-600 w-[100%]";
 
@@ -115,11 +115,11 @@ function afficherBosters() {
         ulCat.append(h4Cat);
         ulCat.className = "flex justify-between flex-wrap"
 
-        item.categorieId.forEach((catId)=>{
+        item.categorieId.forEach((catId) => {
             let li = document.createElement('li');
-            console.log(categori.findIndex(e => parseInt(e.id) === 3 ));
-                        // boosters.findIndex(b => b.id === parseInt(ajoutBtn.name));
-            li.textContent = categori[parseInt(categori.findIndex(e=> e.id === parseInt(catId) ))].name;
+            // console.log(categori.findIndex(e => parseInt(e.id) === 3));
+            // boosters.findIndex(b => b.id === parseInt(ajoutBtn.name));
+            li.textContent = categori[parseInt(categori.findIndex(e => e.id === parseInt(catId)))].name;
             ulCat.append(li);
             // ulCat.append("li");
         })
@@ -146,21 +146,21 @@ function afficherBosters() {
 
 // if(localStorage.getItem('panier') === null){
 //     localStorage.setItem('panier', 'frrrr');
-    // console.log('panier not found and, create it');
+// // console.log('panier not found and, create it');
 // }else{
-    // console.log('creat function skiped, maybe it there! !');
+// // console.log('creat function skiped, maybe it there! !');
 //     let p = localStorage.getItem('panier');
-    // console.log(`${p} <= do you ?`)
+// // console.log(`${p} <= do you ?`)
 // }
 
 
 if (localStorage.getItem('panier') === null) {
     localStorage.setItem('panier', JSON.stringify([]));
-    // console.log('panier not found and, create it');
+    // // console.log('panier not found and, create it');
 } else {
-    // console.log('creat function skiped, maybe it there! !');
+    // // console.log('creat function skiped, maybe it there! !');
     let p = localStorage.getItem('panier');
-    // console.log(`${p} <= do you ?`)
+    // // console.log(`${p} <= do you ?`)
 }
 
 let panier = JSON.parse(localStorage.getItem("panier"));
@@ -174,25 +174,25 @@ const closePanier = document.querySelector(".x");
 const panierSection = document.querySelector(".panier");
 
 const totalP = document.querySelector(".pTotal");
-// console.log()
+// // console.log()
 actualisTotal();
 
-boostersAll.forEach(bstrX =>{
-    
+boostersAll.forEach(bstrX => {
+
     bstrX.addEventListener('click', (ev) => {
-        // console.log(boosters)
+        // // console.log(boosters)
         if (ev.target.tagName === "BUTTON") {
             let ajoutBtn = ev.target;
             let ind = boosters.findIndex(b => b.id === parseInt(ajoutBtn.name));
-            // console.log(`ID = ${id}, tergettxt :${ev.target.textContent}, ajoutBtn.name = ${ajoutBtn.name}, bstr.id = ${boosters[3].id} `)
+            // // console.log(`ID = ${id}, tergettxt :${ev.target.textContent}, ajoutBtn.name = ${ajoutBtn.name}, bstr.id = ${boosters[3].id} `)
             let item = panier.findIndex(e => e.id === ind);
-            if(item > -1){
+            if (item > -1) {
                 panier[item].nbr += 1;
-            }else{
-                panier.push({id : ind, nbr : 1});
+            } else {
+                panier.push({ id: ind, nbr: 1 });
             }
             // panier.push(ind);
-            // console.log(panier)
+            // // console.log(panier)
             localStorage.setItem("panier", JSON.stringify(panier));
             actualisTotal();
         }
@@ -207,8 +207,8 @@ function actualisTotal() {
 
     panier.forEach(el => {
         tot += parseInt(boosters[el.id].prix) * parseInt(el.nbr);
-        // console.log(id)
-        // console.log("===============")
+        // // console.log(id)
+        // // console.log("===============")
         creatLiItem(el.id, el.nbr);
     });
     totalSpan.textContent = `${tot} DH`;
@@ -219,13 +219,13 @@ function actualisTotal() {
 btnAffichPanier.addEventListener("click", e => {
     btnAffichPanier.style.display = "none";
     panierSection.style.display = "block";
-    // console.log(totalP);
+    // // console.log(totalP);
     totalP.textContent = `${totalSpan.textContent}`;
 })
 
 
-function creatLiItem(ind, nbr){
-    
+function creatLiItem(ind, nbr) {
+
     let li = document.createElement("li");
     let img = document.createElement("img");
     let div = document.createElement("div");
@@ -238,9 +238,9 @@ function creatLiItem(ind, nbr){
 
     img.src = boosters[ind].pathImg;
     img.className += "w-[25%]";
-    
+
     li.className = "flex";
-    div.className = "flex justify-between w-[74%] "    
+    div.className = "flex justify-between w-[74%] "
     li.append(img);
     div.append(h3);
     div.append(btn);
@@ -248,45 +248,64 @@ function creatLiItem(ind, nbr){
     ulPanier.append(li);
 }
 
-ulPanier.addEventListener("click", e =>{
-    if(e.target.tagName === 'BUTTON')
-    {
+ulPanier.addEventListener("click", e => {
+    if (e.target.tagName === 'BUTTON') {
         let indec = parseInt(e.target.id);
 
-        let indOfIndex= panier.findIndex(e => e.id === indec);
+        let indOfIndex = panier.findIndex(e => e.id === indec);
 
-        console.log(`id of li => ${indec}`)
-        console.log(`indOfIndex => ${indOfIndex}`)
-        console.log(`panierb befor Dl => ${panier}`)
-        
+        // console.log(`id of li => ${indec}`)
+        // console.log(`indOfIndex => ${indOfIndex}`)
+        // console.log(`panierb befor Dl => ${panier}`)
+
         // panier.splice(indOfIndex , 1);
-        if(panier[indOfIndex].nbr > 1){
+        if (panier[indOfIndex].nbr > 1) {
             panier[indOfIndex].nbr -= 1;
-        }else{
+        } else {
             panier.splice(indOfIndex, 1);
         }
-        console.log(`panierb After Dl => ${panier}`)
+        // console.log(`panierb After Dl => ${panier}`)
 
         localStorage.setItem("panier", JSON.stringify(panier));
         actualisTotal();
     }
 })
 
-closePanier.addEventListener("click", ()=>{
+closePanier.addEventListener("click", () => {
     btnAffichPanier.style.display = "block";
     panierSection.style.display = "none";
 })
 
 let validPanier = document.querySelector(".valider");
-
-validPanier.addEventListener('click', ()=>{
-    if(panier.length !== 0 ){
-        // console.log(panier)
+let myBoosters = [];
+validPanier.addEventListener('click', () => {
+    if (panier.length !== 0) {
+        // // console.log(panier)
         alert('$ votre paiement a ete valider $');
+
+        if (localStorage.getItem('myBoosters') === null) {
+            localStorage.setItem('myBoosters', JSON.stringify([]));
+        } else {
+            myBoosters = JSON.parse(localStorage.getItem('myBoosters'));
+        }
+
+        panier.forEach(e => {
+            // console.log({ id: e.id, name: e.nbr });
+            let x = myBoosters.findIndex(b => b.id === e.id);
+            if (x !== -1) {
+                myBoosters[x].nbr += e.nbr;
+            } else
+                myBoosters.push(e);
+            // // console.log('=========================');
+        })
+
+        localStorage.setItem('myBoosters', JSON.stringify(myBoosters));
         panier = [];
         localStorage.setItem("panier", JSON.stringify(panier));
         actualisTotal();
-    }else(
+
+        // console.log(localStorage.getItem('myBoosters'))
+    } else (
         alert('le panier est vide !!')
     )
 })
