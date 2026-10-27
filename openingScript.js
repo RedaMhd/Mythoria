@@ -1,4 +1,4 @@
-import { boosters, categori, types } from "./data.js";
+import { boosters, categori, types, cards } from "./data.js";
 
 
 let divCntBstr = document.querySelector(".myBstrs");
@@ -70,8 +70,12 @@ divCntBstr.addEventListener('click', e => {
     
     })
     let btnOpn = document.createElement('button');
-    btnOpn.textContent = 'open';
+    btnOpn.textContent = 'OPEN';
     btnOpn.id = id;
+    btnOpn.classList.add('text-yellow-500')
+    btnOpn.classList.add('rounded-[50%]')
+    btnOpn.classList.add('px-2')
+    btnOpn.classList.add('bg-red-900')
 
     divInfos.append(ulTpn);
     divInfos.append(btnOpn)
@@ -79,10 +83,83 @@ divCntBstr.addEventListener('click', e => {
 
 })
 
-divOpen.addEventListener('click' , e=>{
-    if(e.target.)
-})
+// divOpen.addEventListener('click' , e=>{
+//     if(e.target.tagName === 'BUTTON'){
+//         let bstId = e.target.id;
+//         // alert(boosters[bstId].pathImg);
+//         // <div class="bg-red-900 h-[7em] text-center"></div>
+//         //---------
+//         //---------
 
+//     }else return;
+// })
+
+let myCollectionCarts = JSON.parse(localStorage.getItem('myCollectionCarts')) || [];
+
+divOpen.addEventListener('click', e => {
+    if (e.target.tagName !== 'BUTTON') return;
+
+    let bstId = Number(e.target.id);
+    let booster = boosters.find(b => b.id === bstId);
+    let type = types.find(t => t.id === Number(booster.typeId));
+
+    // 1. check the player still owns this booster, then consume one
+    let owned = myBstr.find(b => b.id === bstId);
+    if (!owned || owned.nbr <= 0) {
+        alert("you don't have this booster anymore!");
+        return;
+    }
+    owned.nbr--;
+    let cartDiv = divCntBstr.querySelector(`img[id="${bstId}"]`).closest('.cart');
+    if (owned.nbr === 0) {
+        myBstr = myBstr.filter(b => b.id !== bstId);
+        cartDiv.remove();
+        e.target.remove();               // remove the OPEN button
+    } else {
+        cartDiv.querySelector('h1').textContent = owned.nbr;
+    }
+    divOpen.querySelector('h1').textContent = owned.nbr;
+    localStorage.setItem('myBoosters', JSON.stringify(myBstr));
+
+    // 2. draw cards with Math.random, following the type's recipe
+    let pulled = [];
+    type.categoriIs.forEach(({ id, nCart }) => {
+        let pool = cards.filter(c => c.categorieId === id);
+        for (let i = 0; i < nCart; i++) {
+            pulled.push(pool[Math.floor(Math.random() * pool.length)]);
+        }
+    });
+
+    // 3. save to myCollectionCarts (same {id, nbr} format as myBoosters)
+    pulled.forEach(card => {
+        let inCol = myCollectionCarts.find(c => c.id === card.id);
+        if (inCol) inCol.nbr++;
+        else myCollectionCarts.push({ id: card.id, nbr: 1 });
+    });
+    localStorage.setItem('myCollectionCarts', JSON.stringify(myCollectionCarts));
+
+    // 4. show the cards in divOpen
+    divOpen.querySelector('.opened')?.remove();   // clear the previous opening
+    let opened = document.createElement('div');
+    opened.className = 'opened flex flex-wrap gap-2 justify-center mt-4';
+
+    pulled.forEach(card => {
+        let div = document.createElement('div');
+        let img = document.createElement('img');
+        let p = document.createElement('p');
+
+        div.className = 'h-[7em] text-center';
+        img.src = card.pathImg;
+        img.className = 'h-full';
+        p.textContent = card.name;
+
+        div.append(img);
+        div.append(p);
+        opened.append(div);
+    });
+
+    divOpen.append(opened);
+});
 
 
 showBstrs();
