@@ -49,7 +49,7 @@ function afficherBosters() {
             let li = document.createElement('li');
             
             
-            li.textContent = `${categori[parseInt(categori.findIndex(e => e.id === parseInt(catObj.id)))].name} - ${catObj.nCart}`;
+            li.textContent = `${categori[categori.findIndex(e => e.id === parseInt(catObj.id))].nam} - ${catObj.nCart}`;
             ulCat.append(li);
             // catObj.id
         })

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +9,28 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class=" bg-[url(images/testHeader.png)] ">
         <nav
             class="flex flex-wrap h-[6em] text-center justify-center manufacturing-consent-regular  bg-[url(images/header_transparent.png)] bg-no-repeat bg-size-[93%] bg-center backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl shadow-black/10 ">
-            
+
             <a class="my-auto pt-6 w-[30%] text-yellow-500 " href="boutique.html">
                 Decouvrir les boosters
             </a>
-            
+
             <a class="h-[3em] w-[30%]" href="home.html">
                 <img class="w-100 " src="images/logo.png" alt="Mythoria logo">
             </a>
-            
+
             <a class="my-auto pt-6 w-[30%] text-yellow-400" href="collection.html">
                 Ouvrir mon grimoire
             </a>
-            
+
             <a class="w-[40%] text-yellow-100" href="boutique.html">
                 Decouvrir les boosters
             </a>
-            
+
             <a class="w-[40%] text-yellow-100" href="OpeningChamber.html">
                 Opening Chamber
             </a>
@@ -39,14 +41,27 @@
             <div class="grid grid-cols-4 gap-2 myBstrs">
                 
             </div>
-            
-        </div>
-        <div class="bg-red-200 h-[85%] w-[29%]  mt-[3%] ml-[8%] " >
 
+        </div>
+        <div class=" h-[85%] w-[29%]  mt-[3%] ml-[8%] containerBstr" >
+            <div class="grid grid-cols-4 gap-4 toOpen h-[100%]">
+                <div class="selectedImg col-span-2 row-span-2 text-center h-full p-0">
+                    <img src="#" alt="" class="h-full w-[150%] p-0 m-0">
+                    <h1></h1>
+                </div>
+                <div class="infos col-span-2 row-span-2  text-center h-full">
+
+                </div>
+
+                <!-- <div class="bg-red-900 h-[7em] text-center"></div>
+                <div class="bg-red-900 h-[7em] text-center"></div> -->
+                
+            </div>
         </div>
     </main>
     <!-- <footer></footer> -->
     <!-- <script type="module" src="data.js"></script> -->
-     <script type="module" src="openingScript.js"></script>
+    <script type="module" src="openingScript.js"></script>
 </body>
+
 </html>

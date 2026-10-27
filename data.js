@@ -31,7 +31,7 @@ let boosters = [
     { id: 30, name: "name30", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "40", typeId: "4", categorieId: [1, 3], pathImg: "images/pack/z.png" },
     { id: 31, name: "name31", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "15", typeId: "4", categorieId: [1, 2], pathImg: "images/pack/a.png" },
     { id: 32, name: "name32", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illo neque facere dignissimos? Esse, ut! Nisi", prix: "20", typeId: "4", categorieId: [1, 3], pathImg: "images/pack/b.png" }
-];
+];                                                                                                                                                                                   //===================
 
 
 let types = [
@@ -62,19 +62,19 @@ let types = [
 let categori = [
     {
         id: 1,
-        name: 'Héros'
+        nam: 'Héros'
     },
     {
         id: 2,
-        name: 'Monstres'
+        nam: 'Monstres'
     },
     {
         id: 3,
-        name: 'Serviteurs'
+        nam: 'Serviteurs'
     },
     {
         id: 4,
-        name: 'Sorts'
+        nam: 'Sorts'
     }
 ]
 
