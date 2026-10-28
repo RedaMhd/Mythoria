@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +9,86 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class=" bg-[url(images/testHeader.png)] ">
         <nav
             class="flex flex-wrap h-[6em] text-center justify-center manufacturing-consent-regular  bg-[url(images/header_transparent.png)] bg-no-repeat bg-size-[93%] bg-center backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl shadow-black/10 ">
-            
+
             <a class="my-auto pt-6 w-[30%] text-yellow-500 " href="boutique.html">
                 Decouvrir les boosters
             </a>
-            
+
             <a class="h-[3em] w-[30%]" href="home.html">
                 <img class="w-100 " src="images/logo.png" alt="Mythoria logo">
             </a>
-            
+
             <a class="my-auto pt-6 w-[30%] text-yellow-400" href="collection.html">
                 Ouvrir mon grimoire
             </a>
-            
-            <a class="w-[40%] text-yellow-100" href="boutique.html">
-                Decouvrir les boosters
+
+            <a class="w-[40%] text-yellow-100" href="deck.html">
+                My Deck
             </a>
-            
+
             <a class="w-[40%] text-yellow-100" href="OpeningChamber.html">
                 Opening Chamber
             </a>
         </nav>
     </header>
-    
+    <main
+        class="flex  flex-col justify-between bg-[url(images/bg.png)] bg-cover  bg-size-[105%] bg-center">
+
+        <section class="h-1/4 flex flex-col">
+            <h1
+                class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Héros :
+            </h1>
+            <div class="containerBstr">
+                <div class="cat cat1 flex gap-[15px]">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="h-1/4 flex flex-col ">
+            <h1
+                class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Monstres :
+            </h1>
+            <div class="containerBstr">
+                <div class="cat cat2 flex gap-[15px]">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="h-1/4 flex flex-col">
+            <h1
+                class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Serviteurs :
+            </h1>
+            <div class="containerBstr">
+                <div class="cat cat3 flex gap-[15px]">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="h-1/4 flex flex-col">
+            <h1
+                class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Serviteurs :
+            </h1>
+            <div class="containerBstr">
+                <div class="cat cat4 flex gap-[15px]">
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="collection.js"></script>
 </body>
+
 </html>

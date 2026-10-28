@@ -94,11 +94,11 @@ section{
     box-sizing: border-box;
 }
 
-.bstr{
+.bstr, .cat{
     width: max-content;
     box-sizing: border-box;
 }
-.bstr > div{
+.bstr> div, .cat > div{
     width: 400px;
     padding: 2.8em;
     display: flex;
