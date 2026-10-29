@@ -100,7 +100,9 @@ divOpen.addEventListener('click', e => {
     if (e.target.tagName !== 'BUTTON') return;
 
     let bstId = Number(e.target.id);
-    let booster = boosters.find(b => b.id === bstId);
+    // let booster = boosters.find(b => b.id === bstId);
+    let booster = boosters[bstId];
+    console.log(booster.typeId)
     let type = types.find(t => t.id === Number(booster.typeId));
 
     // 1. check the player still owns this booster, then consume one

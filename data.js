@@ -74,7 +74,7 @@ let categori = [
     },
     {
         id: 4,
-        nam: 'Serviteurs'
+        nam: 'sorts'
     }
 ]
 
