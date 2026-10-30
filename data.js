@@ -112,3 +112,4 @@ let cards = [
 
 
 export {boosters, types, categori, cards};
+export default boosters;
