@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DecK</title>
+    <title>Grimoire</title>
     <link rel="icon" href="images/logo.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
@@ -27,7 +27,7 @@
                 Ouvrir mon grimoire
             </a>
 
-            <a class="w-[40%] text-yellow-100" href="deck.html">
+            <a class="w-[40%] text-yellow-100" id="openDialog">
                 My Deck
             </a>
 
@@ -36,10 +36,92 @@
             </a>
         </nav>
     </header>
-    <main>
+    <main class="flex  flex-col justify-between bg-[url(images/bg.png)] bg-cover  bg-size-[105%] bg-center">
+        <dialog class="w-full">
+            <main class="bg-[url(images/bookBg.png)] bg-cover flex bg-center h-[100vh] ">
+                <div class="h-[85%] w-[29%]  mt-[3%] ml-[17%] containerBstr" style="scrollbar-width: none;">
+                    <div id="carts" class="grid grid-cols-4 gap-2 myBstrs pt-[10%]">
 
+                        <!-- <div class="h-[7em] text-center cart bg-black"></div>
+                        <div class="h-[7em] text-center cart bg-black"></div>
+                        <div class="h-[7em] text-center cart bg-black"></div>
+                        <div class="h-[7em] text-center cart bg-black"></div>
+                        <div class="h-[7em] text-center cart bg-black"></div>
+                        <div class="h-[7em] text-center cart bg-black"></div>
+                        <div class="h-[7em] text-center cart bg-black"></div>
+                        <div class="h-[7em] text-center cart bg-black"></div -->
+                    </div>
+
+                </div>
+                <div class=" h-[85%] w-[29%]  mt-[3%] ml-[8%] containerBstr">
+                    <div class="grid grid-cols-4 gap-4 toOpen h-[100%]">
+                        <div class="selectedImg col-span-2 row-span-2 text-center  p-0">
+                            <img src="#" alt="" class=" w-[150%] p-0 m-0 h-2/3">
+                            <h1></h1>
+                        </div>
+                        <div class="infos col-span-2 row-span-2  text-center ">
+
+                        </div>
+
+                        <div class="bg-red-900 h-[7em] text-center"></div>
+                <div class="bg-red-900 h-[7em] text-center"></div>
+                <div class="bg-red-900 h-[7em] text-center"></div>
+                <div class="bg-red-900 h-[7em] text-center"></div>
+                <div class="bg-red-900 h-[7em] text-center"></div>
+
+                    </div>
+                </div>
+            </main>
+        </dialog>
+
+        <section class="h-1/4 flex flex-col">
+            <h1
+                class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Héros :
+            </h1>
+            <div class="containerBstr">
+                <div class="cat cat1 flex gap-[15px]">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="h-1/4 flex flex-col ">
+            <h1
+                class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Monstres :
+            </h1>
+            <div class="containerBstr">
+                <div class="cat cat2 flex gap-[15px]">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="h-1/4 flex flex-col">
+            <h1
+                class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Serviteurs :
+            </h1>
+            <div class="containerBstr">
+                <div class="cat cat3 flex gap-[15px]">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="h-1/4 flex flex-col">
+            <h1
+                class="bg-[url(images/storeH1.png)] bg-cover bg-size-[99%] pt-[26px] text-yellow-500 h-[3.4em] bg-no-repeat bg-center w-[14em] mt-1 mb-1 text-center">
+                Sorts :
+            </h1>
+            <div class="containerBstr">
+                <div class="cat cat4 flex gap-[15px]">
+
+                </div>
+            </div>
+        </section>
     </main>
-    
     <script type="module" src="deck.js"></script>
 </body>
 

@@ -102,7 +102,7 @@ divOpen.addEventListener('click', e => {
     let bstId = Number(e.target.id);
     // let booster = boosters.find(b => b.id === bstId);
     let booster = boosters[bstId];
-    console.log(booster.typeId)
+    // console.log(booster.typeId)
     let type = types.find(t => t.id === Number(booster.typeId));
 
     // 1. check the player still owns this booster, then consume one
@@ -151,6 +151,7 @@ divOpen.addEventListener('click', e => {
         let p = document.createElement('p');
 
         div.className = 'h-[7em] text-center';
+        // div.className = 'h-[%] text-center cart';
         img.src = card.pathImg;
         img.className = 'h-full';
         p.textContent = card.name;
