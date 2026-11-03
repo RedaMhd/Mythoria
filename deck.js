@@ -105,11 +105,11 @@ openDialog.addEventListener("click", e=>{
     dialog.showModal();
 })
 
+let carts = document.querySelector('#carts');
 
 function showDeck(){
     let deck = JSON.parse(localStorage.getItem('deck'))
     if(!deck) deck = [];
-    let carts = document.querySelector('#carts');
     // console.log(carts)
     deck.forEach(d =>{
         let img = document.createElement('img');
@@ -123,12 +123,40 @@ function showDeck(){
         h1.textContent = (card.type ==='lt')? 'light' : 'darck';
         p.innerText = `atack: ${card.atk} \ndef: ${card.def}`
         cart.className = "h-[100%] text-center cart ";
+        cart.id = d.id;
         cart.append(h1)
         cart.append(img)
         cart.append(p)
         carts.append(cart)
     })
 }
+carts.addEventListener('click', e=>{
+    let cart = e.target.closest('.cart');
+    e.stopPropagation();
+    let id = Number(cart.id);
+    let divImgSelect = document.querySelector(".selectedImg");
+    divImgSelect.replaceChildren();
+    let divInfos = document.querySelector(".infos");
+    divInfos.replaceChildren();
+    let img = document.createElement('img');
+    let name = document.createElement('h1');
+    let discr = document.createElement("p");
+    let rarty = document.createElement("p");
+    let atckDef = document.createElement("h2");
+
+    let card =  cards.find(c => c.id === id);
+
+    img.src = card.pathImg;
+    name.textContent = card.name;
+    discr.textContent = card.description;
+    rarty.textContent = card.rarity;
+    atckDef.innerText = `atck: ${card.atk}\ndef: ${card.def}`;
+
+    divImgSelect.append(name, img);
+
+    divInfos.append(discr, rarty, atckDef);
+
+})
 // console.log('dfd')
 afficherCarts();
 showDeck();

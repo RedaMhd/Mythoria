@@ -132,7 +132,7 @@ divOpen.addEventListener('click', e => {
         }
     });
 
-    // 3. save to myCollectionCarts (same {id, nbr} format as myBoosters)
+    // 3. save to myCollectionCarts 
     pulled.forEach(card => {
         let inCol = myCollectionCarts.find(c => c.id === card.id);
         if (inCol) inCol.nbr++;
@@ -140,7 +140,7 @@ divOpen.addEventListener('click', e => {
     });
     localStorage.setItem('myCollectionCarts', JSON.stringify(myCollectionCarts));
 
-    // 4. show the cards in divOpen
+    // . show the cards in divOpen
     divOpen.querySelector('.opened')?.remove();   // clear the previous opening
     let opened = document.createElement('div');
     opened.className = 'opened flex flex-wrap gap-2 justify-center mt-4';
