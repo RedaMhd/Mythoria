@@ -1,0 +1,42 @@
+
+
+#lImg{
+    /* display: none; */
+    position: absolute;
+    z-index: 1;
+    transform: rotateX(0deg);
+    animation-name: rotate;
+    animation-duration: 0.4s;
+    animation-delay: 0.4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+#dImg{
+    /* display: none; */
+    position: absolute;
+    z-index: 0;
+    transform: rotateX(0deg);
+    animation-name: rotate;
+    animation-duration: 0.4s;
+    /* animation-delay: 0.5s; */
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes rotate {
+    0%{
+        display: block;
+        transform: rotateX(0deg);
+
+    }
+    50%{
+        display: none;
+        transform: rotateX(90deg);
+    }
+    100%{
+        display: none;
+        transform: rotateX(0deg);
+    }
+}

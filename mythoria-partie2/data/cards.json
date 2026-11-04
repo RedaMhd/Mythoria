@@ -1,0 +1,12 @@
+ [
+    {
+        "id": 1,
+        "name": "Fire Booster",
+        "price": 20
+    },
+    {
+        "id": 2,
+        "name": "Dark Booster",
+        "price": 30
+    }
+]
