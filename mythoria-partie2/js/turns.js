@@ -60,7 +60,7 @@ export async function getRolSide() {
         setTimeout(() => {
             divSpn.replaceChildren();
             (winerTurn === 'd') ? (pickSide('player')) : (pickSide('boot'));
-            console.log(side)
+            // console.log(side)
             // setTimeout(()=>{ creat_plyer_state(side, (winerTurn === 'd')? 'player': 'boot')}, time)
             
         }, time);
@@ -131,7 +131,7 @@ function pickSide(who) {
             side = 'l';
             toWeakenCarts('l');
             showStarte('l');
-            localStorage.setItem('state', JSON.stringify([]))
+            localStorage.setItem('state', JSON.stringify([{playerSide : side, winerTurn: 'player', playerPoints : 100, bootPoints : 100}]))
 
         })
         dimg.addEventListener('click', e => {
@@ -143,7 +143,7 @@ function pickSide(who) {
             // }else alert('the boot goes ferst (you L)')
             toWeakenCarts('d');
             showStarte('d');
-            localStorage.setItem('state', JSON.stringify([]))
+            localStorage.setItem('state', JSON.stringify([{playerSide : side, winerTurn: 'player', playerPoints : 100, bootPoints : 100}]))
         })
         // return side;
     } else {
@@ -153,8 +153,8 @@ function pickSide(who) {
         side = (winerTurn === 'l') ? 'd' : 'l';
         showStarte(side);
         // return side;
-        console.log('player side')
-        localStorage.setItem('state', JSON.stringify([]))
+        // console.log('player side')
+        localStorage.setItem('state', JSON.stringify([{playerSide : side, winerTurn: 'boot', playerPoints : 100, bootPoints : 100}]))
     }
     
 

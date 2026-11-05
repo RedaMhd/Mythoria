@@ -5,21 +5,20 @@ let deck = JSON.parse(localStorage.getItem("deck"));
 
 function checkDeck() {
     let deck = JSON.parse(localStorage.getItem("deck"));
-    if(deck.length < 5 ){
+    if (deck.length < 5) {
         return false;
-    }else return true;
+    } else return true;
 }
 
 export function toWeakenCarts(goted) {
     localStorage.setItem('plDeck', JSON.stringify([]));
-    if(!checkDeck()) return alert("you do not have enough cards in your Deck!");
+    localStorage.setItem('btDeck', JSON.stringify([]));
+    if (!checkDeck()) return alert("you do not have enough cards in your Deck!");
     let plDeck = []
+    let btDeck = []
     if (goted === 'l' || goted === 'd') {
         deck.forEach(idOf => {
             cards.forEach(c => {
-                // console.log(c.id)
-                // console.log(idOf.id)
-                // console.log(parseInt(idOf.id) === parseInt(c.id))
                 if (parseInt(idOf.id) === parseInt(c.id)) {
                     if (goted !== c.type) {
                         plDeck.push({ id: parseInt(idOf.id), atk: parseFloat(c.atk - (c.atk * 0.2)), def: parseFloat(c.def - (c.def * 0.2)), o: "-20%" })
@@ -29,13 +28,62 @@ export function toWeakenCarts(goted) {
                 }
             })
         })
+
+        cards.forEach(card => {
+            if (card.type === goted) {
+                btDeck.push({ id: card.id, atk: parseFloat(card.atk - (card.atk * 0.2)), def: parseFloat(card.def - (card.def * 0.2)), o: "-20%" })
+            } else {
+                btDeck.push({ id: card.id, atk: card.atk, def: card.def })
+            }
+        })
     }
 
     localStorage.setItem('plDeck', JSON.stringify(plDeck));
-    console.log(plDeck);
+    localStorage.setItem('btDeck', JSON.stringify(btDeck));
+    // console.log(plDeck);
+    // console.log(btDeck);
 }
 
-export function startGame(goted){
+export function startGame(goted) {
     prepar_plyer_side(goted);
     prepar_boot_side(goted);
+}
+
+export function add_cards_to_hand() {
+    // console.log(hand.childElementCount)
+    let inHand = JSON.parse(localStorage.getItem('inHand')) || [];
+    while (5 > inHand.length) {
+        let plDeck = JSON.parse(localStorage.getItem('plDeck'));
+        console.log(plDeck)
+        
+        // console.log(Math.random()* (plDeck.length - 1))
+        let idc = plDeck[parseInt(Math.random() * (plDeck.length - 1))].id;
+        let card = cards.find(c => c.id === idc);
+        // console.log(card);
+        
+        // console.log(`${card} id == ${idc}`);
+        inHand.push(idc);
+        plDeck.splice((plDeck.findIndex(e => e.id === idc )), 1);
+        
+        localStorage.setItem('plDeck', JSON.stringify(plDeck));
+        localStorage.setItem('inHand', JSON.stringify(inHand));
+        
+        console.log(inHand)
+        
+    }
+}
+
+export function show_cards_in_hand(){
+    let hand = document.querySelector('.player> .hand');
+    let inHand = JSON.parse(localStorage.getItem('inHand')) || [];
+    inHand.forEach(idc => {
+        let img = document.createElement('img');
+        // <img src="../images/carts/Aurelion.png" class="col-span-1 rounded-xl h-[50%]">
+        img.id = idc;
+        img.src = cards[cards.findIndex(e=>e.id === idc)].pathImg;
+        img.className = "col-span-1 rounded-xl h-[50%]";
+        // console.log(cards[cards.findIndex(e=>e.id === idc)].pathImg);
+        hand.append(img);
+        
+    });
 }
