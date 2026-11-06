@@ -19,6 +19,7 @@ export function prepar_boot_side(goted){
     let p = safCase.querySelector('.cas1>p');
     p.textContent = JSON.parse(localStorage.getItem('state'))[0].bootPoints + ' Pt';
 
-    img.src = `./assets/images/${(goted === 'l')? 'd': 'l'}_back.png`
+    img.src = `./assets/images/${(goted === 'l')? 'd': 'l'}_back.png`;
+    
     
 }

@@ -54,36 +54,89 @@ export function add_cards_to_hand() {
     let inHand = JSON.parse(localStorage.getItem('inHand')) || [];
     while (5 > inHand.length) {
         let plDeck = JSON.parse(localStorage.getItem('plDeck'));
-        console.log(plDeck)
-        
+        // console.log(plDeck)
+
         // console.log(Math.random()* (plDeck.length - 1))
         let idc = plDeck[parseInt(Math.random() * (plDeck.length - 1))].id;
         let card = cards.find(c => c.id === idc);
         // console.log(card);
-        
+
         // console.log(`${card} id == ${idc}`);
         inHand.push(idc);
-        plDeck.splice((plDeck.findIndex(e => e.id === idc )), 1);
-        
+        plDeck.splice((plDeck.findIndex(e => e.id === idc)), 1);
+
         localStorage.setItem('plDeck', JSON.stringify(plDeck));
         localStorage.setItem('inHand', JSON.stringify(inHand));
-        
-        console.log(inHand)
-        
+
+        // console.log(inHand)
+
     }
 }
 
-export function show_cards_in_hand(){
+export function show_cards_in_hand() {
     let hand = document.querySelector('.player> .hand');
     let inHand = JSON.parse(localStorage.getItem('inHand')) || [];
+    hand.replaceChildren();
     inHand.forEach(idc => {
         let img = document.createElement('img');
         // <img src="../images/carts/Aurelion.png" class="col-span-1 rounded-xl h-[50%]">
-        img.id = idc;
-        img.src = cards[cards.findIndex(e=>e.id === idc)].pathImg;
+        img.id = 'c'+idc;
+        img.src = cards[cards.findIndex(e => e.id === idc)].pathImg;
+        img.atk = cards[cards.findIndex(e => e.id === idc)].atk;
+        img.def = cards[cards.findIndex(e => e.id === idc)].def;
         img.className = "col-span-1 rounded-xl h-[50%]";
         // console.log(cards[cards.findIndex(e=>e.id === idc)].pathImg);
         hand.append(img);
-        
+
     });
+
+    play_card(hand);
+}
+
+
+function play_card(hand) {
+    let dialog = document.querySelector('dialog');
+    let idc ;
+    hand.addEventListener('click', e => {
+        if (e.target.tagName === "IMG") {
+            idc = e.target.id;
+            dialog.querySelector('img').src = e.target.src;
+            dialog.showModal();
+        }
+        dialog.addEventListener('click', closEvent => {
+            if (closEvent.target === dialog) {
+                dialog.close();
+            }
+            else if (closEvent.target.id === 'atk') {
+                dialog.close();
+                put_img_on_table(idc, '.atk');
+            }
+            else if (closEvent.target.id === 'def') {
+                dialog.close();
+                put_img_on_table(idc, '.def');
+            }
+        })
+    })
+    
+}
+
+function put_img_on_table(idc, wher){
+    let tbl = document.querySelector(wher);
+    
+    if(tbl.childElementCount >= 5){
+        // console.log(tbl.querySelector('img'));
+        tbl.querySelector('img').remove();
+    }
+    let oldImg = document.querySelector(`#${idc}`);
+    let img = document.createElement('img');
+    img.id = idc;
+    img.src = oldImg.src;
+    img.className = 'col-span-1 rounded-xl h-[50%]';
+    if(wher === '.def')img.style = 'transform: rotate(90deg);'; true;
+
+    tbl.append(img);
+    oldImg.remove();
+
+    updatePoints_removeCart()
+
 }

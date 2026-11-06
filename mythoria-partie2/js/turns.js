@@ -6,7 +6,7 @@ function randomStart() {
     return (Math.random() > 0.5) ? 'd' : 'l';
 }
 
-export async function getRolSide() {
+export function getRolSide() {
     let divSpn = document.querySelector('.rol');
     let limg = document.createElement('img');
     let dimg = document.createElement('img');
